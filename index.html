@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -159,7 +160,8 @@
                     <li class="services__item">
                         <span class="services__number">5</span>
                         <p class="services__item-title">Оперативность</p>
-                        <p class="services__item-descr">Закрываем заявки до 4- х часов, выводим на объекты необходимое количество персонала. </p>
+                        <p class="services__item-descr">Закрываем заявки до 4- х часов, выводим на объекты необходимое
+                            количество персонала. </p>
                     </li>
                     <li class="services__item">
                         <span class="services__number">6</span>
@@ -348,9 +350,9 @@
                     </div>
                     <div class="vacancion__right">
                         <img src="img/vacancion/vacancion1.png" alt="" class="vacancion__img vacancion__img--current">
-                      
+
+                    </div>
                 </div>
-            </div>
             </div>
         </section>
         <!-- /.vacancion -->
@@ -362,26 +364,27 @@
                         <span class="footer__left-title">Связаться <span class="footer-black">с нами</span></span>
                         <ul class="footer__list">
                             <li class="footer__item">
-                                
+
                                 <div class="footer__wrapper footer-mail">
                                     <span class="footer__item-title">Почта</span>
                                     <a href="#" class="footer__item-descr">info.keystaff@yandex.ru</a>
                                 </div>
                             </li>
                             <li class="footer__item">
-                                
+
                                 <div class="footer__wrapper footer-phone">
                                     <span class="footer__item-title">Телефон</span>
                                     <a href="#" class="footer__item-descr"> +7 965 035 70 33
                                     </a>
-                                    
+
                                 </div>
                             </li>
                             <li class="footer__item">
-                                
+
                                 <div class="footer__wrapper footer-geo">
                                     <span class="footer__item-title">Адрес</span>
-                                    <address class="footer__item-descr">Ленинградская область, 11 линия Васильевского острова, дом 40</address>
+                                    <address class="footer__item-descr">Ленинградская область, 11 линия Васильевского
+                                        острова, дом 40</address>
                                 </div>
                             </li>
                         </ul>
@@ -417,7 +420,45 @@
             </div>
         </footer>
     </main>
+    <form method="post" id="ajax_form" action="" >
+        <input type="text" name="name" placeholder="NAME" /><br>
+        <input type="text" name="phonenumber" placeholder="YOUR PHONE" /><br>
+        <input type="button" id="btn" value="Отправить" />
+    </form>
+
+    <br>
+
+    <div id="result_form"></div> 
+
     <script src="js/main.js"></script>
+
+    <script>
+        $( document ).ready(function() {
+  $("#btn").click(
+  function(){
+    sendAjaxForm('result_form', 'ajax_form', 'action_ajax_form.php');
+    return false; 
+  }
+);
+});
+
+function sendAjaxForm(result_form, ajax_form, url) {
+  $.ajax({
+      url:     url, //url страницы (action_ajax_form.php)
+      type:     "POST", //метод отправки
+      dataType: "html", //формат данных
+      data: $("#"+ajax_form).serialize(),  // Сеарилизуем объект
+      success: function(response) { //Данные отправлены успешно
+        result = $.parseJSON(response);
+        $('#result_form').html('Имя: '+result.name+'<br>Телефон: '+result.phonenumber);
+    },
+    error: function(response) { // Данные не отправлены
+          $('#result_form').html('Ошибка. Данные не отправлены.');
+    }
+ });
+}
+    </script>
 </body>
 
 </html>
+

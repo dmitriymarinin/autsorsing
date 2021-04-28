@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.ttf') format('ttf');
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2'), 
+         url('../fonts/Montserrat-Regular.woff') format('woff');
     font-display: swap;
     font-weight: 400;
     font-style: normal;
@@ -8,7 +9,8 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Medium.ttf') format('ttf');
+    src: url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+         url('../fonts/Montserrat-Medium.woff') format('woff');
     font-display: swap;
     font-weight: 500;
     font-style: normal;
@@ -16,7 +18,8 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Bold.ttf') format('ttf');
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+         url('../fonts/Montserrat-Bold.woff') format('woff');
     font-display: swap;
     font-weight: 700;
     font-style: normal;
@@ -316,7 +319,7 @@ input, textarea, button, label {
     top: -50px;
     right: 50px;
     font-weight: bold;
-    font-size: 80.9008px;
+    font-size: 80px;
     line-height: 99px;
     color: #6AC6F6;
     opacity: 0.4;
@@ -326,7 +329,7 @@ input, textarea, button, label {
 
 .about__title {
     font-weight: 500;
-    font-size: 38.8855px;
+    font-size: 39px;
     color: var(--white-color);
     text-shadow: 0px 10.317px 87.6948px rgba(0, 0, 0, 0.15);
     margin-bottom: 50px;
@@ -796,7 +799,7 @@ input, textarea, button, label {
     border-radius: 3px;
     border: none;
     font-weight: 500;
-    font-size: 21.4915px;
+    font-size: 21.5px;
     color: #B4B4B4;
     outline: none;
     text-shadow: 0px 3.30638px 28.1042px rgba(0, 0, 0, 0.15);
@@ -817,7 +820,7 @@ input, textarea, button, label {
     border-radius: 3px;
     border: none;
     font-weight: 500;
-    font-size: 21.4915px;
+    font-size: 21.5px;
     color: #1272A3;
     text-shadow: 0px 3.30638px 28.1042px rgba(0, 0, 0, 0.15);
 }
@@ -912,14 +915,14 @@ input, textarea, button, label {
 
 .choose_item-title {
     font-weight: bold;
-    font-size: 26.265px;
+    font-size: 26.2px;
     color: var(--black-color);
     margin-bottom: 10px;
 }
 
 .choose__item-descr {
     font-weight: 500;
-    font-size: 23.5197px;
+    font-size: 23.5px;
     line-height: 130%;
     color: var(--black-color);
 }
@@ -1147,7 +1150,7 @@ input, textarea, button, label {
     bottom: -90px;
     right: 0;
     font-weight: bold;
-    font-size: 80.9008px;
+    font-size: 80.9px;
     line-height: 99px;
     color: #6AC6F6;
     transition: opacity 0.3s ease-in-out, bottom 0.5s ease-in-out;
